@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap'); 
+:root {
+  --blue:#5073E6;
+  --lightblue:#63D2E6;
+  --darkblue:#542F9E;
+  --red:#D9602E;
+   
+      
+}
+
+body {
+  font-family: "Roboto", sans serif;
+  font-size: 16px;  
+}
+
+.bg1 {
+  background-image: linear-gradient(-225deg, #FFFEFF 0%, #D7FFFE 100%);
+    background-size: 200% 200%; 
+}
+
+.bg2 {
+  background-color: #DDDDDD;
+  background-size: 400% 400%;
+  
+}
+
+
+.container{
+  height:100vh;
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+h1 {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 2px;
+  display:inline;
+}
+
+h2 {
+  font-size: 14px;
+  font-weight: lighter;
+}
+
+#thirst {
+  font-weight: 500;
+  font-size: 16px;
+  color: var(--blue);
+  
+}
+
+#output {
+  font-weight: 500;
+}
+
+#btn {
+  padding: 5px 10px;
+  border-radius:30px;
+  border: 2px solid var(--blue);
+  background-color: var(--blue);
+  color: white;
+  font-weight: 500;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+#btn:hover {
+  background-color: var(--lightblue);
+  border: 2px solid var(--lightblue);
+  transition: all 0.5s ease;
+}
+#btn:active {
+  background-color: var(--darkblue);
+  border: 2px solid var(--darkblue);
+  transition: all 0.5s ease;
+}
