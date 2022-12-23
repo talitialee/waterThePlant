@@ -7,19 +7,35 @@
     <link rel='stylesheet' href="style.css">
     <script src='main.js'></script>
 </head>
-<body>
-    
-    <body onload="thirstGenerator()" id="body" class="bg1">
-        <div class="container">
-          <img src="resources/Plante1.png" id="myPlant" alt="my plant" width="300px">
-          <br/>
-          <h1 id="intro">Hi there! I am Eddie the plant, water me if you like :)</h1>
-          <h2>My thirst level : <span id="thirst"></span> - 
-            <span id="output"></span></h2>
-          <button onclick="myFunction()" id="btn">Water the plant</button>
+
+<body onload="thirstGenerator()" class="animate-bg">
+  <header>
+    <div class="reload" onclick="firstScene()"><img src="resources/reloadgrey.svg" alt="Reload the page"></div>
+    <h1>Water the plant</h1>
+  </header>
+     
+      <div class="container">
+          <div class="plant">
+            <img src="resources/Plante1.png" id="myPlant" alt="my plant" width="300px">
+          </div>
+
+          <div class="textAndBtn">
+          <div class="text"><h1 id="intro">Hi there!<br> I'm Eddie the plant, water me if you like :)</h1>
+          <h2>My thirst level : <span id="thirst"></span> 
+            <span id="output"><h2></h2></span></h2>
+          </div>
+          <div class="btn">
+            <button onclick="waterThePlant()" id="btn" class="wave-btn">Water the plant</button>
+          </div>
         </div>
-        </div>
-        </body>
+        
+        
+      </div>
+
+      
+      <footer id="credit">
+        <h2>Website & illustrations by <a href="https://alice-reuter.myportfolio.com/" alt="Alice Reuter's portfolio" target="_blanck">Alice Reuter</a></h2>
+      </footer>
 
 </body>
 </html>

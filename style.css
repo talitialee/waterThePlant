@@ -1,80 +1,268 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap'); 
 :root {
-  --blue:#5073E6;
-  --lightblue:#63D2E6;
-  --darkblue:#542F9E;
-  --red:#D9602E;
+  --lightblue:#deffff;
+  
+  --lightgreen:#defee7;
+  --greenfooter: #afe1bd;
+
+  --lightyellow:#f3fed6;
+  --darkyellow: #d3e4a9;
+
+  --lightred:#fed5d5;
+  --darkred: #d18f8f;
+
+  --darkgrey: #494949;
+  --color: #e0f4ad; 
+  --green: #bee7e7; /* header and footer */
+
+  --buttondarkgreen:rgb(32, 112, 112, 0.7); /* for the button */
+  --buttonlightgreen:rgba(109, 191, 191, 0.8); /* for the button */
+  --buttongreen: #4fb5b5;
+
+  --firstAndLastKeyFrames: #deffff; /* BG animation */
+  --secondKeyFrame: #defee7;
    
       
 }
 
+* {
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   font-family: "Roboto", sans serif;
-  font-size: 16px;  
+  letter-spacing: .1rem;
+  color: var(--darkgrey);
+  background-color: var(--lightblue);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
-.bg1 {
-  background-image: linear-gradient(-225deg, #FFFEFF 0%, #D7FFFE 100%);
-    background-size: 200% 200%; 
+
+.animate-bg {
+  animation: gradient 8s ease infinite; 
 }
 
-.bg2 {
-  background-color: #DDDDDD;
-  background-size: 400% 400%;
-  
+@keyframes gradient { 
+  0% {
+    background: var(--firstAndLastKeyFrames);
+  }
+  50% {
+    background: var(--secondKeyFrame);
+  }
+  100% {
+    background: var(--firstAndLastKeyFrames);
+  }
+
+} 
+
+header {
+  height:10vh;
+  display: flex;
+  flex-direction: row;
+  justify-content:flex-start;
+  align-items: center;
+
 }
 
+header img {
+  padding:10px;
+  margin-right: 10px;
+  margin-top: 5px;
+  margin-left: 10px;
+  min-height: 60px;
+}
+header img:hover {
+  cursor:pointer;
+  filter:brightness(1.5);
+}
+
+header h1 {
+  font-size:1.2em;
+  font-weight: 100;
+  text-decoration:underline;
+
+}
+
+footer {
+  background-color: var(--green);
+  padding: 10px;
+  height:10vh;
+  position: relative;
+  bottom: 0;
+  text-align: center;
+  font-weight: 300;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+footer a {
+  text-decoration:underline;
+  color:black;
+}
+
+footer a:hover{
+  color:grey;
+}
+
+footer a:active {
+  color:darkgrey;
+}
 
 .container{
-  height:100vh;
+  height:80vh;
   display: flex;
+  text-align: center;
   flex-direction:column;
   align-items: center;
   justify-content: center;
   
 }
 
-h1 {
-  font-size: 16px;
-  font-weight: 500;
-  margin-bottom: 2px;
-  display:inline;
+.container h1 {
+  font-size: 0.8em; 
+  font-weight: 400;
+  margin-bottom: 10px;
+
 }
 
 h2 {
-  font-size: 14px;
-  font-weight: lighter;
+  font-size: 0.7em; 
+  font-weight: 350;
+  margin-bottom: 2px;
 }
+
 
 #thirst {
   font-weight: 500;
-  font-size: 16px;
-  color: var(--blue);
+  color: var(--darkpurple);
   
 }
 
-#output {
-  font-weight: 500;
-}
 
-#btn {
-  padding: 5px 10px;
-  border-radius:30px;
-  border: 2px solid var(--blue);
-  background-color: var(--blue);
+
+
+  
+.wave-btn {
+  background-color: var(--buttongreen);
+  display: block;
+  margin-top:2em;
+  padding: 0.8em;
+  border-radius: 30px;
   color: white;
+  text-decoration: none;
+  border: none;
+  letter-spacing: .1rem;
+
+  font-size: 1em;
   font-weight: 500;
-  font-size: 16px;
-  margin-bottom: 10px;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+  transition: all 1s;
+}
+  
+.wave-btn:before, .wave-btn:after {
+  content: "";
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  border-radius: 130px;
+  
+  top: 30px;
+  left: 50%;
+  transform: translate(-50%);
 }
 
-#btn:hover {
-  background-color: var(--lightblue);
-  border: 2px solid var(--lightblue);
-  transition: all 0.5s ease;
+.wave-btn:before {
+  background-color: var(--buttondarkgreen);
+  animation: wave 14s infinite linear;
+  transition: all 1s;
+  
+  z-index:-1;
 }
-#btn:active {
-  background-color: var(--darkblue);
-  border: 2px solid var(--darkblue);
-  transition: all 0.5s ease;
+.wave-btn:after {
+  background-color: var(--buttonlightgreen);
+  animation: wave 15s infinite linear;
+  transition: all 1s;
+  z-index:-2;
 }
+  
+.wave-btn:hover {
+  cursor: pointer;
+
+}
+
+.wave-btn:hover:before {
+  top: 5px;
+  background-color: (var(--buttondarkgreen), 0.7);
+  
+  }
+
+  .wave-btn:hover:after {
+    background-color: (var(--buttonlightgreen), 0.9);
+   
+  }
+
+  
+@keyframes wave {
+  0% {
+               transform: translate(-50%) rotate(-180deg);
+      
+  }
+    
+    
+  100% {
+            transform: translate(-50%) rotate(360deg);
+  }
+}
+
+
+ /* Media queries */
+
+
+ @media only screen and (min-device-width: 480px) 
+                   and (max-device-width: 768px) 
+                   and (orientation: landscape) {
+ 
+
+  
+  .container{  
+    flex-direction:row-reverse;
+    
+    justify-content: right;
+    text-align: right;
+    flex-wrap: nowrap;
+    
+  }
+
+  .textAndBtn { 
+   display: flex;
+   flex-direction: column;
+   align-items: flex-end;
+   justify-content: flex-end; 
+  }
+
+ 
+
+  .plant {
+    padding-bottom: 20%;
+  }
+
+  header { 
+    padding-top: 20px; 
+  }
+  
+
+}
+
+
+
+
+
